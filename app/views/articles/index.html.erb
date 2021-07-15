@@ -1,0 +1,26 @@
+<h1>Rails Blog</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Body</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td> <%= link_to article.id, article %> </td>
+      <td><%= article.name %></td>
+      <td><%= article.body %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to "New Article", new_article_path(@article) %>
+</p>
