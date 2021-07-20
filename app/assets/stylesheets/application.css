@@ -13,3 +13,127 @@
  *= require_tree .
  *= require_self
  */
+
+ *, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:root {
+  --main-color-1: #e6e6c2;
+  --main-color-2: #babbb3;
+  --main-color-3: #a5a5ab;
+  --main-color-4: #808096;
+  --main-color-5: #5f5f89;
+  --menu-color: #333;
+  --font-color: #3c3431;
+  --secondary-color-1: #705446;
+  --secondary-color-2: #e1c391;
+  --secondary-color-3: #fdf4e3;
+  --secondary-color-4: #3c3431;
+  --secondary-color-5: #e2e6e7;
+  --secondary-color-6: #e4d4c8;
+  --secondary-color-7: #d0b49f;
+  --secondary-color-8: #201a1e;
+  --font-size: 22px;
+  --footer-height: 1.2rem;
+}
+
+/* GLOBAL ELEMENT STYLES */
+html {
+  font-size: var(--font-size);
+  font-family: 'Lora', serif;
+  background-color: var(--main-color-1);
+  color: var(--font-color);
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  text-align: center;
+}
+
+body {
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.80;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  width: 500px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  font-size: 0.7rem;
+  position: absolute;
+  height: var(--footer-height);
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main-color-1);
+  color: var(--main-color-4);
+  text-align: center;
+  box-shadow: rgba(255,255,255, 0.2) 0 -1px;
+}
+
+/* GLOBAL CLASS STYLES */
+.a-remove {
+  color: var(--main-color-4);
+}
+
+.a-remove:hover {
+  text-decoration: underline;
+}
+
+/* PAGE CONTAINER */
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#content-wrap {
+  margin-bottom: 1vh; 
+  padding-bottom: var(--footer-height);
+}
+
+/* PAGE STYLES */
+.content {
+  padding: 0 10vw;
+}
+
+/* INDEX */
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-btn {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: .8rem;
+  color: red;
+  /* background: blue; */
+}

@@ -1,27 +1,24 @@
-<h1>Rails Blog</h1>
-<p> <%= Article.public_count %> articles available for viewing </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Body</th>
-    </tr>
+<section class="content">
+  <div class="message"> 
+    <p> <%= Article.public_count %> articles available for viewing </p>
+    <button class="create-btn"><%= link_to "Create Article", new_article_path(@article) %></button>
+  </div>
 
-  </thead>
-
-  <tbody>
   <% @articles.each do |article| %>
-    <tr>
-      <td> <%= link_to article.id, article %> </td>
-      <td><%= article.name %></td>
-      <td><%= article.body %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+      <div class="title"> <%= link_to article.name, article, class: "a-remove" %> </div>
 
-<p>
-<%= link_to "New Article", new_article_path(@article) %>
-</p>
+      <% if article.created_at == article.updated_at %>
+        <div class="timestamp">Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
+      <% else %>
+        <div class="timestamp">
+          <p>Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+          <p>Updated: <%= article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+        </div>
+      <% end %>
+
+      <div class="article-body"><%= article.body %></div>
+  <% end %>
+  
+ 
+</section>
