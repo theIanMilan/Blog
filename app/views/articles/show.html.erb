@@ -1,5 +1,5 @@
 <div class="top-container">
-  <div class="title a-remove"> <%= @article.name %> </div>
+  <div class="title"> <%= @article.name %> </div>
   <div>
     <button class="edit-btn"><%= link_to "Edit", edit_article_path(@article) %></button>
     <button class="delete-btn"><%= link_to "Delete", article_path(@article),
@@ -20,7 +20,13 @@
 <div class="article-body"><%= @article.body %></div>
 
 <h2>Comments</h2>
-<%= render @article.comments %>
+<% if @article.comments.present? %>
+  <%= render @article.comments %>
+<% else %>
+  <div><em>There are no Comments on this article.</em></div>
+<% end %>
+
+
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>

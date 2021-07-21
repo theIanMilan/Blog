@@ -80,10 +80,17 @@ button:hover {
 }
 
 input, textarea, select {
-  padding: 5px;
+  padding: 10px;
   font-family: inherit;
   font-size: inherit;
   width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 2.5%;
+}
+
+select {
+  width: max-content;
 }
 
 textarea {
@@ -146,6 +153,7 @@ footer {
   border-radius: 20px;
   font-size: .8rem;
   color: red;
+  width: max-content;
 }
 
 /* BUTTONS */
