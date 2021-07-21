@@ -1,13 +1,23 @@
-<h1><%= @article.name %></h1>
-
-<p><%= @article.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article),
+<div class="top-container">
+  <div class="title a-remove"> <%= @article.name %> </div>
+  <div>
+    <button class="edit-btn"><%= link_to "Edit", edit_article_path(@article) %></button>
+    <button class="delete-btn"><%= link_to "Delete", article_path(@article),
                 method: :delete,
-                data: { confirm: "Are you sure?" } %></li>
-</ul>
+                data: { confirm: "Are you sure?" } %></button>
+  </div>
+</div>
+
+<% if @article.created_at == @article.updated_at %>
+  <div class="timestamp">Published: <%= @article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
+<% else %>
+  <div class="timestamp">
+    <p>Published: <%= @article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+    <p>Updated: <%= @article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+  </div>
+<% end %>
+
+<div class="article-body"><%= @article.body %></div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>

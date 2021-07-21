@@ -60,6 +60,11 @@ header {
   text-align: center;
 }
 
+h2 {
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+}
+
 body {
   width: 100%;
 }
@@ -75,9 +80,15 @@ button:hover {
 }
 
 input, textarea, select {
+  padding: 5px;
   font-family: inherit;
   font-size: inherit;
-  width: 500px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 250px;
 }
 
 a {
@@ -124,7 +135,7 @@ footer {
 }
 
 /* INDEX */
-.message {
+.top-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,5 +146,19 @@ footer {
   border-radius: 20px;
   font-size: .8rem;
   color: red;
-  /* background: blue; */
+}
+
+/* BUTTONS */
+.edit-btn {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: .8rem;
+  color: red;
+}
+
+.delete-btn {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: .8rem;
+  color: red;
 }

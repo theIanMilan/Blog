@@ -1,24 +1,19 @@
+<div class="top-container"> 
+  <p> <%= Article.public_count %> articles available for viewing </p>
+  <button class="create-btn"><%= link_to "Create Article", new_article_path(@article) %></button>
+</div>
 
-<section class="content">
-  <div class="message"> 
-    <p> <%= Article.public_count %> articles available for viewing </p>
-    <button class="create-btn"><%= link_to "Create Article", new_article_path(@article) %></button>
-  </div>
+<% @articles.each do |article| %>
+    <div class="title"> <%= link_to article.name, article, class: "a-remove" %> </div>
 
-  <% @articles.each do |article| %>
-      <div class="title"> <%= link_to article.name, article, class: "a-remove" %> </div>
+    <% if article.created_at == article.updated_at %>
+      <div class="timestamp">Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
+    <% else %>
+      <div class="timestamp">
+        <p>Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+        <p>Updated: <%= article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+      </div>
+    <% end %>
 
-      <% if article.created_at == article.updated_at %>
-        <div class="timestamp">Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
-      <% else %>
-        <div class="timestamp">
-          <p>Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
-          <p>Updated: <%= article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
-        </div>
-      <% end %>
-
-      <div class="article-body"><%= article.body %></div>
-  <% end %>
-  
- 
-</section>
+    <div class="article-body"><%= article.body %></div>
+<% end %>
