@@ -58,13 +58,6 @@ html {
   scroll-behavior: smooth;
 }
 
-header {
-  width: 100%;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-  text-align: center;
-}
-
 h2 {
   font-size: 1.1rem;
   color: var(--main-color-1);
@@ -104,21 +97,6 @@ textarea {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-footer {
-  font-size: 0.7rem;
-  position: absolute;
-  height: var(--footer-height);
-  bottom: 0;
-  width: 100%;
-  background-color: var(--main-color-4);
-  color: var(--main-color-3);
-  text-align: center;
-  box-shadow: rgba(255,255,255, 0.2) 0 -1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* GLOBAL CLASS STYLES */

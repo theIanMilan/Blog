@@ -1,0 +1,14 @@
+footer {
+  font-size: 0.7rem;
+  position: absolute;
+  height: var(--footer-height);
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main-color-4);
+  color: var(--main-color-3);
+  text-align: center;
+  box-shadow: rgba(255,255,255, 0.2) 0 -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
