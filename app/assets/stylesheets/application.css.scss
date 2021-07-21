@@ -14,6 +14,9 @@
  *= require_self
  */
 
+// application.scss
+@import "./actiontext.scss";
+
  *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -25,30 +28,32 @@
 }
 
 :root {
-  --main-color-1: #e6e6c2;
-  --main-color-2: #babbb3;
-  --main-color-3: #a5a5ab;
-  --main-color-4: #808096;
-  --main-color-5: #5f5f89;
   --menu-color: #333;
   --font-color: #3c3431;
-  --secondary-color-1: #705446;
-  --secondary-color-2: #e1c391;
-  --secondary-color-3: #fdf4e3;
-  --secondary-color-4: #3c3431;
-  --secondary-color-5: #e2e6e7;
-  --secondary-color-6: #e4d4c8;
-  --secondary-color-7: #d0b49f;
-  --secondary-color-8: #201a1e;
+
+  --main-color-1: #705446;
+  --main-color-2: #e1c391;
+  --main-color-3: #fdf4e3;
+  --main-color-4: #3c3431;
+
+  --main-color-5: #e2e6e7;
+  --main-color-6: #e4d4c8;
+  --main-color-7: #d0b49f;
+  --main-color-8: #201a1e;
+
+  --color-add: #e3fde7;
+  --color-edit: #E3ECFD;
+  --color-destroy: #fde3f9;
+
   --font-size: 22px;
-  --footer-height: 1.2rem;
+  --footer-height: 1.5rem;
 }
 
 /* GLOBAL ELEMENT STYLES */
 html {
   font-size: var(--font-size);
   font-family: 'Lora', serif;
-  background-color: var(--main-color-1);
+  background-color: var(--main-color-3);
   color: var(--font-color);
   scroll-behavior: smooth;
 }
@@ -61,8 +66,10 @@ header {
 }
 
 h2 {
+  font-size: 1.1rem;
+  color: var(--main-color-1);
   padding-top: 3vh;
-  padding-bottom: 1vh;
+  padding-bottom: 0.5vh;
 }
 
 body {
@@ -73,10 +80,6 @@ button {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.80;
 }
 
 input, textarea, select {
@@ -109,19 +112,26 @@ footer {
   height: var(--footer-height);
   bottom: 0;
   width: 100%;
-  background-color: var(--main-color-1);
-  color: var(--main-color-4);
+  background-color: var(--main-color-4);
+  color: var(--main-color-3);
   text-align: center;
   box-shadow: rgba(255,255,255, 0.2) 0 -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* GLOBAL CLASS STYLES */
 .a-remove {
-  color: var(--main-color-4);
+  color: var(--font-color);
 }
 
 .a-remove:hover {
   text-decoration: underline;
+}
+
+.footer-link {
+  color: var(--main-color-1);
 }
 
 /* PAGE CONTAINER */
@@ -149,24 +159,35 @@ footer {
 }
 
 .create-btn {
-  padding: 10px;
+  cursor: pointer;
+  padding: 9px;
   border-radius: 20px;
+  border: 1px solid var(--main-color-4);
   font-size: .8rem;
-  color: red;
-  width: max-content;
+  background-color: var(--color-add);
+  // width: 250px;
 }
 
 /* BUTTONS */
 .edit-btn {
+  cursor: pointer;
   padding: 10px;
   border-radius: 20px;
-  font-size: .8rem;
-  color: red;
+  border: 1px solid var(--main-color-4);
+  font-size: .7rem;
+  background-color: var(--color-edit);
+  color: var(--main-color-8);
 }
 
 .delete-btn {
+  cursor: pointer;
   padding: 10px;
   border-radius: 20px;
-  font-size: .8rem;
-  color: red;
+  border: 1px solid var(--main-color-4);
+  font-size: .7rem;
+  background-color: var(--color-destroy);
+}
+
+.create-btn:hover, .edit-btn:hover, .delete-btn:hover {
+  filter: saturate(350%);
 }

@@ -4,16 +4,16 @@
 </div>
 
 <% @articles.each do |article| %>
-    <div class="title"> <%= link_to article.name, article, class: "a-remove" %> </div>
-
-    <% if article.created_at == article.updated_at %>
-      <div class="timestamp">Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
-    <% else %>
-      <div class="timestamp">
-        <p>Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
-        <p>Updated: <%= article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
-      </div>
-    <% end %>
-
-    <div class="article-body"><%= article.body %></div>
+    <article>
+      <div class="title"> <%= link_to article.name, article, class: "a-remove" %> </div>
+      <% if article.created_at == article.updated_at %>
+        <div class="timestamp">Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y') %></div>
+      <% else %>
+        <div class="timestamp">
+          <p>Published: <%= article.created_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+          <p>Updated: <%= article.updated_at.strftime('%-I:%M %p %d %B %Y')  %></p>
+        </div>
+      <% end %>
+      <div class="article-body"><%= article.body %></div>
+    </article>
 <% end %>
