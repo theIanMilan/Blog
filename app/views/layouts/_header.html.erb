@@ -1,8 +1,16 @@
 <header>
-  <div class="header-container">
+  <div class="left-header-container"><%= link_to 'Home', articles_path %></div>
+
+  <div>
+    <div class="logo-container">
+      <img src="<%= image_path('logo.png') %>" class="logo" alt="logo">
+    </div>
     <div class="text-container">
       <div class="header-text">IAN ON RAILS</div>
       <div class="header-subtext">A BLOG POWERED BY RUBY ON RAILS</div>
     </div>
   </div>
+
+  <div class="right-header-container">​</div>
+  <%# NOTE USES ZWSP - Zero Width Space %>
 </header>

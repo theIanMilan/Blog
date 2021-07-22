@@ -169,3 +169,20 @@ a {
 .create-btn:hover, .edit-btn:hover, .delete-btn:hover {
   filter: saturate(350%);
 }
+
+// MEDIA QUERIES
+/* 468px and down */
+@media only screen and (min-width: 0px) and (max-width: 468px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 768px and down */
+@media only screen and (min-width: 469px) and (max-width: 767px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Default style for 768px and up */
