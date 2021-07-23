@@ -20,6 +20,22 @@
 
   <body>
     <div id="page-container">
+      <%# Notices/Alerts %>
+      <% flash.each do |type, msg| %>
+        <div classs="container p-5">
+          <div class="row no-gutters fixed-bottom">
+            <div class="col-xl-4 col-lg-5 col-md-6">
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="alert-success close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <%= msg %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
       <div id="content-wrap">
       <%= render "layouts/header" %>
       <section class="content"><%= yield %></section>
@@ -28,10 +44,4 @@
       <%= render "layouts/footer" %>
     </div>
   </body>
-  <%# Notices/Alerts %>
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <%= msg %>
-    </div>
-  <% end %>
 </html>

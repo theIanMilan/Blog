@@ -10,12 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-// application.scss
+//  Custom bootstrap; Manually load other stylesheets
+@import "bootstrap-custom"; 
+@import "./articles.scss";
+@import "./comments.scss";
+@import "./footer.scss";
+@import "./header.scss";
 @import "./actiontext.scss";
+
 
  *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -110,6 +114,13 @@ a {
 
 .footer-link {
   color: var(--main-color-1);
+}
+
+.hide {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* PAGE CONTAINER */
