@@ -4,9 +4,8 @@
     <%= link_to edit_article_path(@article) do %>
       <%= content_tag :button, "Edit", class: "edit-btn" %>
     <% end %>
-    <%= link_to article_path(@article) do %>
-      <%= content_tag :button, "Delete", class: "delete-btn",
-          method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to article_path, method: :delete, data: {confirm: "Are you sure?"} do %>
+      <%= content_tag :button, "Delete", class: "delete-btn" %>
     <% end %>
   </div>
 </div>
