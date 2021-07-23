@@ -1,6 +1,8 @@
 <div class="top-container"> 
   <p> <%= Article.public_count %> articles available for viewing </p>
-  <button class="create-btn"><%= link_to "Create Article", new_article_path(@article) %></button>
+  <%= link_to new_article_path(@article) do %>
+    <%= content_tag :button, "Create Article", class: "create-btn" %>
+  <% end %>
 </div>
 
 <% @articles.each do |article| %>

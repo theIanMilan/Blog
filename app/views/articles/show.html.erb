@@ -1,10 +1,13 @@
 <div class="top-container">
   <div class="title"> <%= @article.name %> </div>
   <div>
-    <button class="edit-btn"><%= link_to "Edit", edit_article_path(@article) %></button>
-    <button class="delete-btn"><%= link_to "Delete", article_path(@article),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></button>
+    <%= link_to edit_article_path(@article) do %>
+      <%= content_tag :button, "Edit", class: "edit-btn" %>
+    <% end %>
+    <%= link_to article_path(@article) do %>
+      <%= content_tag :button, "Delete", class: "delete-btn",
+          method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
   </div>
 </div>
 
