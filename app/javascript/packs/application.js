@@ -17,3 +17,4 @@ ActiveStorage.start()
 
 require("trix")
 require("@rails/actiontext")
+global.toastr = require("toastr")

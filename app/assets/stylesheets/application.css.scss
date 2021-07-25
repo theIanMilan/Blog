@@ -19,7 +19,7 @@
 @import "./footer.scss";
 @import "./header.scss";
 @import "./actiontext.scss";
-
+@import "toastr/toastr";
 
  *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -121,6 +121,11 @@ a {
   width: 0;
   visibility: hidden;
   opacity: 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
 }
 
 /* PAGE CONTAINER */

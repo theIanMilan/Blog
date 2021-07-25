@@ -5,13 +5,20 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    if @comment.valid?
+      flash[:notice] = "Added comment successfully!"
+      redirect_to article_path(@article)
+    else
+      flash[:alert] = "Something went wrong..."
+      redirect_to article_path(@article)
+    end
   end
 
   def destroy
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
+    flash[:notice] = "Comment deleted successfully!"
     redirect_to article_path(@article)
   end
 

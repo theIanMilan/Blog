@@ -17,9 +17,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    if @article.save
-      redirect_to articles_path, notice: "Article successfully created!"
+    if @article.valid?
+      flash[:notice] = "Article successfully created!"
+      redirect_to articles_path
     else
+      flash[:alert] = "Something went wrong..."
       render :new
     end
   end
@@ -32,9 +34,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-      redirect_to @article, notice: "Article successfully edited!"
+      flash[:notice] = "Article successfully edited!"
+      redirect_to articles_path
     else
-      render :edit
+      flash[:alert] = "Something went wrong..."
+      render :new
     end
   end
 
@@ -42,7 +46,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_to root_path, notice: "Article successfully deleted!"
+    flash[:notice] =  "Article successfully deleted!"
+    redirect_to root_path
   end
 
   private
