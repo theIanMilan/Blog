@@ -1,20 +1,20 @@
-### Live Demo
+## Live Demo
 View the live app [at heroku.](https://ians-avion-blog.herokuapp.com/)
 
-### Introduction
+## Introduction
 
 This project, my first Rails application, is a personal blog that allows an admin to post content (Articles) and let other users comment on the articles. The goal in building this app was to learn about MVC concepts and CRUD operations.
 
 This project was built following [Rails Guide](https://guides.rubyonrails.org/getting_started.html).
 
-### Screenshots
+## Screenshots
 
 <p float = 'left'>
     <img src="app/assets/images/Blog-App-1.png" alt="Blog Screenshot 1" width="500" height="300">
     <img src="app/assets/images/Blog-App-2.png" alt="Blog Screenshot 2" width="500" height="300">
 </p>
 
-### App Architecture:
+## App Architecture:
 
 1) Articles - name, body, status
 2) Comments - author, body, and belongs to an Article
@@ -22,7 +22,7 @@ This project was built following [Rails Guide](https://guides.rubyonrails.org/ge
 * Rich text enabled for Articles body using Trix Editor
 * Flash messages for CRUD operations using `toastr`
 
-### Technologies
+## Technologies
 
 * Ruby v2.7.3
 * Ruby on Rails v6.1.4
