@@ -61,6 +61,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added gems
 gem 'image_processing' # trix editor
-gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
